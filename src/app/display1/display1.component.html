@@ -1,0 +1,8 @@
+<div *ngIf="!showLoading">
+  <div class="loading">
+    <img src="../../assets/img/loader.gif">
+  </div>
+</div>
+<div *ngIf="showLoading">
+  <router-outlet></router-outlet>
+</div>

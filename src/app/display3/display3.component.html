@@ -1,0 +1,73 @@
+<nav class="navbar navbar-light bg-nav">
+  <!--img src="../../assets/img/i_bcpLogo.png" width="100" height="40" alt=""-->
+  <h5 class="nav-Text mx-auto" href="">Detalle de Agencia</h5>
+</nav>
+<div class="container">
+  <form role="form" [formGroup]="updateAgenyFormGroup">
+    <div class="form-group">
+      <label for="agencia">Nombre de Agencia:</label>
+      <input type="text" class="form-control" formControlName="nameAgencyFromControl" id="agencia"
+        placeholder="Nombre de la Agencia" required
+        [ngClass]="{ 'is-invalid': submitted && f.nameAgencyFromControl.errors }">
+      <div class="invalid-feedback" *ngIf="submitted && f.nameAgencyFromControl.invalid">
+        <div *ngIf="f.nameAgencyFromControl?.errors?.required">
+          Este campo es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="direccion">Dirección:</label>
+      <input type="text" class="form-control" formControlName="directionAgencyFormControl" id="direccion"
+        placeholder="Dirección de la Agencia" required
+        [ngClass]="{ 'is-invalid': submitted && f.directionAgencyFormControl.errors }">
+      <div class="invalid-feedback" *ngIf="submitted && f.directionAgencyFormControl.invalid">
+        <div *ngIf="f.directionAgencyFormControl?.errors?.required">
+          Este campo es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="distrito">Distrito:</label>
+      <input type="text" class="form-control" formControlName="districtAgencyFormControl" id="distrito"
+        placeholder="Distrito de la Agencia" required
+        [ngClass]="{ 'is-invalid': submitted && f.districtAgencyFormControl.errors }">
+      <div class="invalid-feedback" *ngIf="submitted && f.districtAgencyFormControl.invalid">
+        <div *ngIf="f.districtAgencyFormControl?.errors?.required">
+          Este campo es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="latitud">Longitud:</label>
+      <input type="text" class="form-control" formControlName="latAgencyFormControl" id="latitud"
+        placeholder="Latitud de la Agencia" required
+        [ngClass]="{ 'is-invalid': submitted && f.latAgencyFormControl.errors }">
+      <div class="invalid-feedback" *ngIf="submitted && f.latAgencyFormControl.invalid">
+        <div *ngIf="f.latAgencyFormControl?.errors?.required">
+          Este campo es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="longitud">Latitud:</label>
+      <input type="text" class="form-control" formControlName="lonAgencyFormControl" id="longitud"
+        placeholder="Longitud de la Agencia" required
+        [ngClass]="{ 'is-invalid': submitted && f.lonAgencyFormControl.errors }">
+      <div class="invalid-feedback" *ngIf="submitted && f.lonAgencyFormControl.invalid">
+        <div *ngIf="f.lonAgencyFormControl?.errors?.required">
+          Este campo es requerido
+        </div>
+      </div>
+    </div>
+    <div class="justify-content-center">
+      <div class="align-self-center text-center">
+        <button type="button" class="btn btn-primary" (click)="submitUpdate()">Actualizar</button>
+      </div>
+    </div>
+  </form>
+  <h1>Ubicación de la Agencia:</h1>
+  <google-map width="col-12" [center]="center" [zoom]="zoom">
+    <map-marker *ngFor="let markerPosition of markerPositions" [position]="markerPosition" [options]="markerOptions">
+    </map-marker>
+  </google-map>
+</div>

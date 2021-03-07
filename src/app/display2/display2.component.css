@@ -1,0 +1,38 @@
+.bg-nav{
+  background-color: #012D74;
+}
+.nav-Text{
+  color: white;
+}
+
+.cont{
+  max-width: 96%;
+  margin: auto;
+}
+
+.contentList {
+  border: 1px solid #c4c4c4;
+  clear: both;
+  overflow: hidden;
+}
+
+.borderList {
+  border-bottom: 1px solid #c4c4c4;
+  margin: 0;
+  padding: 18px 16px 10px;
+}
+
+img{
+  max-width: 120px;
+  max-height: 120px;
+}
+@media (max-width: 576px){
+  img{
+    max-width: 80px;
+    max-height: 80px;
+  }
+}
+
+.contentMap{
+  max-width: 80%;
+}
